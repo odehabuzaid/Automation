@@ -1,4 +1,2 @@
 poetry.lock
 *.ipynb
-results
-main.py
