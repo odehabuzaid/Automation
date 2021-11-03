@@ -6,11 +6,13 @@ def auto():
     with open('./assets/potential-contacts.txt','r') as file:
         email_finder = r'([a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+)'
         
-        formated_numbers = r'(\d{3}[-\.\s]\d{3}[-\.\s]\d{4}|\(\d{3}\)\s*\d{3}[-\.\s]\d{4}|\d{3}[-\.\s]\d{4})'
+        
+        
+        formated_numbers = r'(\d{3}[-\.\s]\d{2,3}[-\.\s]\d{4}|\(\d{3}\)\s*\d{3}[-\.\s]\d{4}|\d{3}[-\.\s]\d{4})'
 
         regex = re.compile(email_finder)
         content = file.read()
-
+        
         email_address = regex.findall(content)
         
         regex = re.compile(formated_numbers)
